@@ -1,0 +1,15 @@
+#chanel-name {
+  font-weight: 700;
+}
+ul {
+  list-style: none;
+}
+p {
+  text-align: justify;
+}
+img {
+  background-size: cover;
+}
+#post {
+  font-size: small;
+}
