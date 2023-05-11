@@ -3,7 +3,7 @@ import logo from "../image/minicode - Copy.jpg";
 import picture from "../image/project.png";
 // icons
 import { FaRegComment } from "react-icons/fa";
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiFillHeart } from "react-icons/ai";
 import { AiOutlineRetweet } from "react-icons/ai";
 import { BsShare } from "react-icons/bs";
 import { useState } from "react";
@@ -12,7 +12,41 @@ import { useState } from "react";
 import "./Post.css";
 
 const Post = (prop) => {
-  const [counter, setCounter] = useState(0);
+  // btn like
+  const [likeCount, setLikeCount] = useState(50);
+  const [activeBtn, setActiveBtn] = useState("none");
+
+  const handleLikeClick = () => {
+    if (activeBtn === "none") {
+      setLikeCount(likeCount + 1);
+      setActiveBtn("like");
+      return;
+    }
+
+    if (activeBtn === "like") {
+      setLikeCount(likeCount - 1);
+      setActiveBtn("none");
+      return;
+    }
+  };
+  // btn retweet
+  const [retweet, setRetweet] = useState(2007);
+  const [activeretweet, setActiveRetweet] = useState("none");
+
+  const handleRetweetClick = () => {
+    if (activeretweet === "none") {
+      setRetweet(retweet + 1);
+      setActiveRetweet("retweet");
+      return;
+    }
+
+    if (activeretweet === "retweet") {
+      setRetweet(retweet - 1);
+      setActiveRetweet("none");
+      return;
+    }
+  };
+
   return (
     <div className="container-fluid border-bottom my-5">
       <div className=" m-1 mt-4 row  ">
@@ -66,27 +100,31 @@ const Post = (prop) => {
               </li>
 
               <li className="mx-2 list-inline-item ">
-                <span
-                  onClick={() => setCounter(counter + 1)}
-                  className="mt-1 d-inline-block"
-                >
-                  <i className="text-secondary ">
+                <span className="mt-1 d-inline-block">
+                  <i
+                    className={`retweet ${
+                      activeretweet === "retweet" ? "retweet-active" : ""
+                    }`}
+                    onClick={handleRetweetClick}
+                  >
                     <AiOutlineRetweet />
                   </i>
                 </span>
-                <p className="d-inline-block">{prop.retwit}</p>
+                <p className="d-inline-block">{retweet}</p>
               </li>
 
               <li className="mx-2 list-inline-item ">
-                <span
-                  onClick={() => setCounter(counter + 1)}
-                  className=" mt-1 d-inline-block"
-                >
-                  <i className="text-secondary ">
-                    <AiOutlineHeart />
+                <span className="mt-1  d-inline-block">
+                  <i
+                    className={`like ${
+                      activeBtn === "like" ? "like-active" : ""
+                    }`}
+                    onClick={handleLikeClick}
+                  >
+                    <AiFillHeart style={{ margin: "0px" }} />
                   </i>
+                  <p className="d-inline-block">{likeCount}</p>
                 </span>
-                <p className="d-inline-block">{counter}</p>
               </li>
 
               <li className="mx-2 list-inline-item ">

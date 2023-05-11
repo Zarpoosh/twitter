@@ -13,3 +13,12 @@ img {
 #post {
   font-size: small;
 }
+
+/* btn */
+
+.like-active {
+  color: #ff0063;
+}
+.retweet-active{
+  color: #00ff88;
+}
