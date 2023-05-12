@@ -10,7 +10,7 @@ const Sidebar = (prop) => {
           onClick={prop.handlehide}
           id="bg-side"
           style={{ height: "100vh" }}
-          className="col-4"
+          className="col-2"
         ></div>
       </div>
     </div>

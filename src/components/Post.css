@@ -20,5 +20,8 @@ img {
   color: #ff0063;
 }
 .retweet-active{
-  color: #00ff88;
+  color: #00ff95;
+}
+#post-i{
+  font-size: 15px;
 }

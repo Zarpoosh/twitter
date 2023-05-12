@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import logo from "../image/minicode - Copy.jpg";
+import "./Menu.css";
 // icons
 import { MdPersonOutline } from "react-icons/md";
 import { CiViewList } from "react-icons/ci";
@@ -11,29 +12,54 @@ import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { TbRocket } from "react-icons/tb";
 import { HiOutlineLightBulb } from "react-icons/hi";
 import { BsQrCode } from "react-icons/bs";
+import { AiOutlineDown } from "react-icons/ai";
 // end of icons
 
 const Menu = (prop) => {
   return (
-    <div className="col-8 col-md-4 bg-white pt-3 " style={{ height: "100vh" }}>
+    <div id="menu" className="col-10 col-md-5 col-lg-3  bg-white pt-3  " style={{ height: "100vh" }}>
       <div className="row">
+        {/* logo */}
         <a className=" ">
-          <img src={logo} style={{ width: "50px" }} alt="" />
+          <img src={logo} style={{ width: "60px" }} alt="" />
         </a>
-        <a href="#" id="chanel-name" className="text-decoration-none text-dark">
-          {prop.name}
-        </a>
-        <a href="#" className="text-secondary text-decoration-none">
-          {prop.idname}
-        </a>
+        {/* end of logo */}
+        <div className="col-9">
+          <div className="row">
+            <a
+              href="#"
+              id="chanel-name"
+              className="text-decoration-none text-dark"
+            >
+              {prop.name}
+            </a>
+            <a href="#" className="text-secondary text-decoration-none d-inline-block">
+              {prop.idname}
+            </a>
+          </div>
+        </div>
+        <div className="col-3 justify-content-center text-center">
+          <span type="file" className="bg-white rounded-circle p-2 ">
+            <i>
+              <AiOutlineDown />
+            </i>
+          </span>
+        </div>
       </div>
-      <div className="row my-3 border-bottom p-2">
-        <a href="" className="mx-2 text-decoration-none text-secondary">
-          {prop.following} Following
+      <div className="flex-row my-3 border-bottom p-2">
+        <a
+          href="#"
+          id="follow"
+          className="mx-2 text-decoration-none text-dark "
+        >
+          {prop.following}
         </a>
-        <a href="" className="mx-2 text-decoration-none text-secondary">
-          {prop.followers} Followers
+        <span className=" text-secondary">Following</span>
+
+        <a href="#" id="follow" className="mx-2 text-decoration-none text-dark">
+          {prop.followers}
         </a>
+        <span className=" text-secondary">Followers</span>
       </div>
 
       {/* icons */}
@@ -109,7 +135,7 @@ const Menu = (prop) => {
               Monetisation
             </a>
           </li>
-          <li className="my-4 border-bottom border-top p-2">
+          <li className="my-4 border-bottom border-top p-2 flex-nowrap">
             <a href="" className="text-dark text-decoration-none ">
               <span type="file" className="bg-white rounded-circle p-2 ">
                 <i>
@@ -129,21 +155,27 @@ const Menu = (prop) => {
               Help Center
             </a>
           </li>
-          <li className="my-4 border-top p-2 ">
-            <a href="" className="text-dark text-decoration-none">
-              <span type="file" className="bg-white rounded-circle p-2 ">
-                <i>
-                  <HiOutlineLightBulb />
-                </i>
-              </span>
-            </a>
-            <a href="" className="text-dark text-decoration-none">
-              <span type="file" className="bg-white rounded-circle p-2 ">
-                <i>
-                  <BsQrCode />
-                </i>
-              </span>
-            </a>
+          <li className=" border-top p-2 ">
+            <div className="row ">
+              <div className="col-9">
+                <a href="" className="text-dark text-decoration-none">
+                  <span type="file" className="bg-white rounded-circle pl-2">
+                    <i>
+                      <HiOutlineLightBulb />
+                    </i>
+                  </span>
+                </a>
+              </div>
+              <div className="col-3">
+                <a href="" className="text-dark text-decoration-none">
+                  <span type="file" className="bg-white rounded-circle m-4">
+                    <i>
+                      <BsQrCode />
+                    </i>
+                  </span>
+                </a>
+              </div>
+            </div>
           </li>
         </ul>
       </div>

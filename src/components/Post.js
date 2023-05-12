@@ -4,7 +4,8 @@ import picture from "../image/project.png";
 // icons
 import { FaRegComment } from "react-icons/fa";
 import { AiFillHeart } from "react-icons/ai";
-import { AiOutlineRetweet } from "react-icons/ai";
+import { FaRetweet } from "react-icons/fa";
+import { BsThreeDotsVertical } from "react-icons/bs";
 import { BsShare } from "react-icons/bs";
 import { useState } from "react";
 // end of icons
@@ -30,7 +31,7 @@ const Post = (prop) => {
     }
   };
   // btn retweet
-  const [retweet, setRetweet] = useState(2007);
+  const [retweet, setRetweet] = useState(20);
   const [activeretweet, setActiveRetweet] = useState("none");
 
   const handleRetweetClick = () => {
@@ -48,10 +49,10 @@ const Post = (prop) => {
   };
 
   return (
-    <div className="container-fluid border-bottom my-5">
-      <div className=" m-1 mt-4 row  ">
+    <div className="container-fluid border-bottom mt-3 mb-">
+      <div className=" m-1  row  ">
         {/* logo */}
-        <div className="col-md-2 col-4">
+        <div className="col-md-2 col-3">
           <a className="row">
             <img src={logo} alt="" />
           </a>
@@ -59,26 +60,37 @@ const Post = (prop) => {
         {/* end of logo */}
 
         {/* descreption */}
-        <div className="col-8 align-items-left text-justify ">
-          <div className="row"></div>
-          <a
-            href="#"
-            id="chanel-name"
-            className="text-decoration-none text-dark"
-          >
-            {" "}
-            {prop.name}{" "}
-          </a>
-          <a href="#" className="text-secondary text-decoration-none">
-            {prop.idname}
-          </a>
-          <span className="text-secondary">{prop.time}</span>
+        <div className="col-9 align-items-left text-justify ">
+          <div className="row flex-nowrap">
+            <div className="col-11">
+              <a
+                href="#"
+                id="chanel-name"
+                className="text-decoration-none text-dark"
+              >
+                {" "}
+                {prop.name}{" "}
+              </a>
+              <a href="#" className="text-secondary text-decoration-none">
+                {prop.idname}
+              </a>
+              <span className="text-secondary">{prop.time}</span>
+            </div>
+            <div className="col-1">
+              <span className=" mt-1 d-inline-block">
+                <i className="fa fa- text-secondary">
+                  <BsThreeDotsVertical />
+                </i>
+              </span>
+            </div>
+          </div>
+
           <div className="row ">
-            <p className="text-justify mt-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
-              temporibus accusantium. Ullam perferendis in necessitatibus quo,
-              sint ratione saepe! Praesentium perspiciatis nesciunt harum
-              dolorum error accusamus eos laboriosam, veritatis tempora.
+            <p className=" mt-2">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse
+              cupiditate magnam libero optio eveniet quae dicta quam dolorum,
+              voluptas quisquam obcaecati modi unde. Labore atque repellat
+              assumenda laboriosam? Dolorum, sequi!
             </p>
           </div>
           {/* image */}
@@ -88,53 +100,48 @@ const Post = (prop) => {
           {/* end of image */}
 
           {/* icons */}
-          <div className="row text-center">
-            <ul id="post" className="list-inline">
-              <li className="mx-2 list-inline-item ">
-                <span className=" mt-1 d-inline-block">
-                  <i className="fa fa- text-secondary">
-                    <FaRegComment />
-                  </i>
-                </span>
-                <p className="d-inline-block">{prop.comments}</p>
-              </li>
-
-              <li className="mx-2 list-inline-item ">
-                <span className="mt-1 d-inline-block">
-                  <i
-                    className={`retweet ${
-                      activeretweet === "retweet" ? "retweet-active" : ""
-                    }`}
-                    onClick={handleRetweetClick}
-                  >
-                    <AiOutlineRetweet />
-                  </i>
-                </span>
-                <p className="d-inline-block">{retweet}</p>
-              </li>
-
-              <li className="mx-2 list-inline-item ">
-                <span className="mt-1  d-inline-block">
-                  <i
-                    className={`like ${
-                      activeBtn === "like" ? "like-active" : ""
-                    }`}
-                    onClick={handleLikeClick}
-                  >
-                    <AiFillHeart style={{ margin: "0px" }} />
-                  </i>
-                  <p className="d-inline-block">{likeCount}</p>
-                </span>
-              </li>
-
-              <li className="mx-2 list-inline-item ">
-                <span className=" mt-1 d-inline-block">
-                  <i className="text-secondary ">
-                    <BsShare />
-                  </i>
-                </span>
-              </li>
-            </ul>
+          <div id="post-i" className="row text-center flex-nowrap">
+            <div className="col">
+              <span className=" mt-1 d-inline">
+                <i className="fa fa- text-secondary">
+                  <FaRegComment />
+                  {prop.comments}
+                </i>
+              </span>
+            </div>
+            <div className="col">
+              <span className="mt-1 d-inline-block text-secondary">
+                <i
+                  className={`retweet ${
+                    activeretweet === "retweet" ? "retweet-active" : ""
+                  }`}
+                  onClick={handleRetweetClick}
+                >
+                  <FaRetweet id="com-i" />
+                  {retweet}
+                </i>
+              </span>
+            </div>
+            <div className="col">
+              <span className="mt-1  d-inline-block text-secondary">
+                <i
+                  className={`like ${
+                    activeBtn === "like" ? "like-active" : ""
+                  }`}
+                  onClick={handleLikeClick}
+                >
+                  <AiFillHeart style={{ margin: "0px" }} />
+                  {likeCount}
+                </i>
+              </span>
+            </div>
+            <div className="col">
+              <span className=" mt-1 d-inline">
+                <i className="text-secondary ">
+                  <BsShare />
+                </i>
+              </span>
+            </div>
           </div>
           {/* end of icons */}
         </div>

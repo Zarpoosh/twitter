@@ -1,0 +1,19 @@
+#follow {
+  font-weight: bold;
+}
+#side {
+  font-size: 1.3rem;
+}
+#menu {
+  animation: left 0.5s ease-in-out;
+}
+@keyframes left {
+  0% {
+    margin-left: -300px;
+    /* opacity: 1; */
+  }
+  100% {
+    margin-left: 0;
+    /* opacity: 0.2; */
+  }
+}

@@ -4,9 +4,13 @@
 #upload {
   display: none;
 }
-li{
-    cursor: pointer;
-}
-a{
+li,
+i {
   cursor: pointer;
+}
+a {
+  cursor: pointer;
+}
+#modal-i {
+  font-size: 20px;
 }

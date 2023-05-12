@@ -11,18 +11,19 @@ const Top = (prop) => {
     <div className="container-fluid border-bottom">
       <div className="m-2 d-flex justify-content-between  p-1">
         <a onClick={prop.handlehshow}>
-          <img src={logo} style={{ width: "50px" }} alt="" />
+          <img src={logo} style={{ width: "35px" }} alt="" />
         </a>
         <span id="icon">
-          <i class="fa fa-Twitter text-primary ">
+          <i class="fa fa-Twitter" style={{ color: "#1D9BF0" }}>
             <BsTwitter />
           </i>
         </span>
 
         <span id="icon">
-          <i class="fa fa-Stars text-dark ">
-            <BsStars />
+          <i class="fa fa-Stars" >
+            <BsStars/>
           </i>
+        
         </span>
       </div>
     </div>
