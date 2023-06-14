@@ -109,7 +109,7 @@ const Post = (prop) => {
                 </i>
               </span>
             </div>
-            <div className="col">
+             <div className="col">
               <span className="mt-1 d-inline-block text-secondary">
                 <i
                   className={`retweet ${
